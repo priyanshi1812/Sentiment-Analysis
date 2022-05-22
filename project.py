@@ -119,22 +119,6 @@ def create_app_ui():
                     ),
     html.H1(children = 'Missing',id='sentiment1',style={'text-align':'center'}),
     html.Hr(style={'background-color':'black'}),
-    """html.H2(children = "Find Sentiment of Your Review",style = {'text-align':'center','text-decoration':'underline'}),
-    dcc.Textarea(
-        id = 'textarea_review',
-        placeholder = 'Enter the review here.....',
-        style = {'width':'100%', 'height':150,'font-size':'22px'}
-        ),
-    
-    dbc.Button(
-        children = 'FInd Review',
-        id = 'button_review',
-        color = 'dark',
-        style= {'width':'100%'}
-        ),
-    
-    html.H1(children = 'Missing', id='result',style={'text-align':'center'})"""
-    
     ]    
     )
     
@@ -142,43 +126,6 @@ def create_app_ui():
 
 
 
-'''
-Event Handling 
-When some clicks the button call my method update_app_ui
-
-Wiring 
-Object      Event    Function 
-Button      Click    update_app_ui
-
-Decorators and callbacks mechanism is a way to implment wiring in python
-Input  === Arguments to your callback
-Output === return of your callback 
-
-'''
-
-'''
-@app.callback(
-    Output( 'result'   , 'children'     ),
-    [
-    Input( 'textarea_review'    ,  'value'    )
-    ]
-    )
-def update_app_ui(textarea_value):
-    
-    print("Data Type = ", str(type(textarea_value)))
-    print("Value = ", str(textarea_value))
-
-    response = check_review(textarea_value)
-
-    if (response[0] == 0):
-        result = 'Negative'
-    elif (response[0] == 1 ):
-        result = 'Positive'
-    else:
-        result = 'Unknown'
-
-    return result
-'''
 
 
 @app.callback(
